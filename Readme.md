@@ -43,7 +43,6 @@ Run scripts for data processing, CDI computation, and forecasting.
 Source code, scripts, and CDI dataset on GitHub (as stated in paper).
 
 ## Authors and Funding
-- Leads: Imed Riadh Farah, Ali Ben Abbes, Mohamed Farah.
 - Funded: SmartSDG-Tunisia (Ministry of Higher Education).
 
 ## Citation
