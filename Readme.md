@@ -1,93 +1,47 @@
-# Composite Drought Index Dataset for Tunisia (2000–2025)
 
-This repository provides the source code and scripts used to develop a high-resolution (1 km) **Composite Drought Index (CDI)** dataset for Tunisia for the period 2000–2025, and to forecast drought dynamics using deep learning models.
-
-The CDI integrates multi-source remote sensing and reanalysis datasets (CHIRPS, ERA5-Land, and MODIS) to capture meteorological, agricultural, and thermal drought conditions.
-
-
-## Paper Reference
-
-**Title:** A Novel Composite Drought Index from Satellite Imagery and Its Forecasting using Deep Learning Models : Case Study for Tunisia 2000-2025
-
-> If you use this dataset or code, please cite the associated paper.
+# CDI Project README
 
 ## Project Overview
-
 This project develops a novel CDI using multi-source Earth Observation data (CHIRPS, ERA5-Land, MODIS) at 1 km resolution. It integrates SPI, SPEI, soil moisture anomaly (SMA), NDVI anomaly, and LST anomaly via a logic-based cause-effect framework for drought monitoring and classifies into Normal, Watch, Warning, Alert-1/2, and Urgency stages.
 
 Deep learning forecasts CDI using 12 models (e.g., TimeFormer, SSSLN, LSTM), with TimeFormer performing best (Accuracy: 0.9057).
 
 ## Key Features
-High-resolution (1 km) national drought dataset for Tunisia 2000-2025.
+- High-resolution (1 km) national drought dataset for Tunisia 2000-2025.
+- Captures major events (e.g., 2000-2002, 2016-2018, 2021-2025 droughts).
+- Validated against ground stations (R²=0.75 for SPI).
+- Designed for reproducibility, extensibility, and transferability to other regions.
 
-Captures major events (e.g., 2000-2002, 2016-2018, 2021-2025 droughts).
+## Data Sources
+| Product | Variables | Resolution | Period | Source |
+|---------|-----------|------------|--------|--------|
+| CHIRPS | Rainfall (SPI) | 5 km | 1981-present | UCSB Climate Hazards Center  |
+| ERA5-Land | Temp, Evap, Soil Moisture (SPEI, SMA) | 9 km | 1981-present | Copernicus CDS |
+| MODIS | LST (MOD11A1), NDVI (MOD13A3) | 1 km | 2000-present | NASA LP DAAC  |
 
-Validated against ground stations (R²=0.75 for SPI).
+Data harmonized to 1 km monthly scale via clipping, re-projection, and gap-filling.
 
-Designed for reproducibility, extensibility, and transferability to other regions.
-
-## Deep Learning Forecasting
-
-## Repository Structure
-
-```
-/data/              # Input data (scripts)
-/models/            # Deep learning training and testing scripts
- # Outputs (maps, plots, metrics)
-README.md
-requirements.txt
+## Methods
+1. Compute indicators: SPI-1 (gamma dist.), SPEI-1 (log-logistic), z-scores for SMA/NDVI-A/LST-A.
+2. CDI logic: Thresholds (e.g., SPI/SPEI/SMA/NDVI ≤ -1; LST-A ≥ 0.5).
+3. Forecasting: Train/test 12 DL models on CDI time-series (train: 2000-2016; test: 2024-2025).
+4. Validation: Wavelet analysis, ground SPI correlation.
 
 ## Installation
-
-Clone the repository:
-```bash
-git clone https://github.com/recherchemse/SMARTSDG.git
-cd smart_sdg_composite_drought_index
-```
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+- Python environment with PyTorch/TensorFlow, Google Earth Engine.
+- Public datasets downloadable via APIs (CHIRPS, ERA5, MODIS).
 
 ## Usage
+Run scripts for data processing, CDI computation, and forecasting. 
 
-### 1. Compute drought indicators
 
-Run scripts to generate SPI, SPEI, SMA, NDVI-A, and LST-A:
+## Repository
+Source code, scripts, and CDI dataset on GitHub (as stated in paper).
 
-```bash
-python Data/compute_indicators.py
-```
+## Authors and Funding
+- Leads: Imed Riadh Farah, Ali Ben Abbes, Mohamed Farah.
+- Funded: SmartSDG-Tunisia (Ministry of Higher Education).
 
-### 2. Generate CDI maps
-
-Run the CDI construction pipeline:
-
-```bash
-python scripts/build_cdi.py
-```
-
-### 3. Train deep learning models
-
-Train and evaluate models using:
-
-```bash
-python train_model.py --model TimeFormer
-```
-
-### 4. Forecast CDI
-
-Forecast CDI for future months:
-
-```bash
-python forecast.py --model TimeFormer
-```
-## Results
-
-- The CDI dataset shows strong **spatio-temporal drought variability** across Tunisia, with severe impacts particularly in **central and southern regions**.
-- Validation against ground rainfall stations shows strong agreement between station-based SPI and CHIRPS-derived SPI.
-- 
 ## Citation
 
 If you use this repository, please cite:
@@ -100,12 +54,7 @@ If you use this repository, please cite:
 }
 ```
 
-## License
-
-This project is released under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
 ## Contact
-
 For questions or collaboration, please contact:
 
 - **Name:** [Pr. Riadh Farah]
