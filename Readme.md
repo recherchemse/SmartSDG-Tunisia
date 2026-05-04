@@ -38,10 +38,6 @@ Data harmonized to 1 km monthly scale via clipping, re-projection, and gap-filli
 ## Usage
 Run scripts for data processing, CDI computation, and forecasting. 
 
-
-## Repository
-Source code, scripts, and CDI dataset on GitHub (as stated in paper).
-
 ## Authors and Funding
 - Funded: SmartSDG-Tunisia (Ministry of Higher Education).
 
