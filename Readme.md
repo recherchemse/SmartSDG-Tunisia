@@ -6,6 +6,10 @@ This project develops a novel CDI using multi-source Earth Observation data (CHI
 
 Deep learning forecasts CDI using 12 models (e.g., TimeFormer, SSSLN, LSTM), with TimeFormer performing best (Accuracy: 0.9057).
 
+<div align="center">
+<img src="CDI.png" width="700">
+</div>
+
 ## Key Features
 - High-resolution (1 km) national drought dataset for Tunisia 2000-2025.
 - Captures major events (e.g., 2000-2002, 2016-2018, 2021-2025 droughts).
