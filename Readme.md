@@ -11,62 +11,29 @@ The CDI integrates multi-source remote sensing and reanalysis datasets (CHIRPS, 
 
 > If you use this dataset or code, please cite the associated paper.
 
-## Overview
+## Project Overview
 
-The **Composite Drought Index (CDI)** is built using five drought-related indicators:
+This project develops a novel CDI using multi-source Earth Observation data (CHIRPS, ERA5-Land, MODIS) at 1 km resolution. It integrates SPI, SPEI, soil moisture anomaly (SMA), NDVI anomaly, and LST anomaly via a logic-based cause-effect framework for drought monitoring and classifies into Normal, Watch, Warning, Alert-1/2, and Urgency stages.
 
-| Indicator | Description |
-|-----------|-------------|
-| **SPI-1** | Standardized Precipitation Index |
-| **SPEI-1** | Standardized Precipitation Evapotranspiration Index |
-| **SMA** | Soil Moisture Anomaly |
-| **NDVI-A** | NDVI Anomaly |
-| **LST-A** | Land Surface Temperature Anomaly |
+Deep learning forecasts CDI using 12 models (e.g., TimeFormer, SSSLN, LSTM), with TimeFormer performing best (Accuracy: 0.9057).
 
-These indicators are combined using a **logic-based cause–effect framework** to classify drought conditions into six categories:
+## Key Features
+High-resolution (1 km) national drought dataset for Tunisia 2000-2025.
 
-- 🟢 **Normal**
-- 🟡 **Watch**
-- 🟠 **Warning**
-- 🔴 **Alert-1**
-- 🔴 **Alert-2**
-- ⚫ **Urgency**
+Captures major events (e.g., 2000-2002, 2016-2018, 2021-2025 droughts).
 
-The dataset highlights major drought episodes in Tunisia, including **2002–2003**, **2016–2018**, and **2020–2024**.
+Validated against ground stations (R²=0.75 for SPI).
 
-## Data Sources
+Designed for reproducibility, extensibility, and transferability to other regions.
 
-The CDI dataset is derived from:
-
-| Source | Variable | Resolution | Frequency |
-|--------|----------|------------|-----------|
-| **CHIRPS v2** | Precipitation | ~5 km | Monthly |
-| **ERA5-Land** | Temperature, Evaporation, Soil Moisture | ~9 km | Monthly |
-| **MODIS MOD13A3** | NDVI | 1 km | Monthly |
-| **MODIS MOD11A1** | Land Surface Temperature | 1 km | Daily → Monthly |
-
-> All datasets were processed and resampled to a common **1 km resolution**.
-> 
 ## Deep Learning Forecasting
 
-Several deep learning architectures were tested for CDI forecasting:
-
-- TimeFormer ⭐ *(best overall performance)*
-- SSSLN
-- Transformer
-- CNN-LSTM / CNN-GRU
-- TCN
-- LSTM / GRU
-- ConvLSTM
-- NHITS
-- TiDE
-- iTransformer
 ## Repository Structure
 
 ```
 /data/              # Input data (scripts)
 /models/            # Deep learning training and testing scripts
-/Visualisations/    # Outputs (maps, plots, metrics)
+ # Outputs (maps, plots, metrics)
 README.md
 requirements.txt
 
