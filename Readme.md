@@ -1,5 +1,5 @@
 
-# CDI Project README
+# A Modelling Framework for a Satellite-Derived Composite Drought Index and its Forecasting using Deep Learning
 
 ## Project Overview
 This project develops a novel CDI using multi-source Earth Observation data (CHIRPS, ERA5-Land, MODIS) at 1 km resolution. It integrates SPI, SPEI, soil moisture anomaly (SMA), NDVI anomaly, and LST anomaly via a logic-based cause-effect framework for drought monitoring and classifies into Normal, Watch, Warning, Alert-1/2, and Urgency stages.
@@ -47,7 +47,7 @@ If you use this repository, please cite:
 
 ```bibtex
 @article{paper,
-  title={A Novel Composite Drought Index from Satellite Imagery and Its Forecasting using Deep Learning Models : Case Study for Tunisia 2000-2025},
+  title={A Modelling Framework for a Satellite-Derived Composite Drought Index and its Forecasting using Deep Learning},
   author={Ben Othmen Dhouha, Oueslati Fedi, Chouikhi Farah, Ben Abbes Ali, Rhif Manel, Baltin Hanen, Farah Mohamed and Farah Imed Riadh},
   year={2026}
 }
