@@ -47,7 +47,7 @@ If you use this repository, please cite:
 
 ```bibtex
 @article{paper,
-  title={A Modelling Framework for a Satellite-Derived Composite Drought Index and its Forecasting using Deep Learning},
+  title={Satellite-derived Composite Drought Index Modelling Framework and Forecasting using Deep Learning},
   author={Dhouha Ben Othman, Fadia Oueslati, Farah Choukhi, Ali Ben Abbes, Hanen Balti, Manel Rhif, Mohamedb Farah, Imed Riadh Farah},
   year={2026}
 }
