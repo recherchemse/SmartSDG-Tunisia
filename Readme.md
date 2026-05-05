@@ -56,5 +56,5 @@ If you use this repository, please cite:
 ## Contact
 For questions or collaboration, please contact:
 
-- **Name:** [Pr. Riadh Farah]
+- **Name:** [Pr. Imed Riadh Farah]
 - **Email:** [recherche@mse.uma.tn]
