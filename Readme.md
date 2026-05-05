@@ -38,8 +38,9 @@ Data harmonized to 1 km monthly scale via clipping, re-projection, and gap-filli
 ## Usage
 Run scripts for data processing, CDI computation, and forecasting. 
 
-## Authors and Funding
-- Funded: SmartSDG-Tunisia (Ministry of Higher Education).
+## Funding
+This work was supported by the Ministry of Higher Education and
+Scientific Research, Tunisia (Grant P2ES2023-D6P2).
 
 ## Citation
 
