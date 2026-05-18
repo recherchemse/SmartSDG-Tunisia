@@ -7,7 +7,6 @@ This project develops a novel CDI using multi-source Earth Observation data (CHI
 Deep learning forecasts CDI using 12 models (e.g., TimeFormer, SSSLN, LSTM), with TimeFormer performing best (Accuracy: 0.9057).
 
 <div align="center">
-<img src="CDI.png" width="700">
 </div>
 
 ## Key Features
